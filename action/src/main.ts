@@ -26,7 +26,7 @@ const setOrAppendEnvVar = (name: string, value: string): void => {
 };
 
 const toolsPaths = (installDir: string): string[] =>
-  ["Tools/**/bin", "*.app/Contents/MacOS", "*.app/**/bin"].flatMap((p: string): string[] =>
+  ["Tools/**/bin", "Tools/**", "*.app/Contents/MacOS", "*.app/**/bin"].flatMap((p: string): string[] =>
     glob.sync(`${installDir}/${p}`)
   );
 
